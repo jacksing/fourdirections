@@ -52,6 +52,10 @@ class FourDirections(object):
             if selection.strip() == '?':
                 self.print_game()
                 continue
+            elif selection.strip() == '!':
+                self.print_game()
+                perror('用户退出游戏，游戏结束！')
+                sys.exit(1)
             elif not re.match(r'^[ABCD][1-9]$', selection, re.IGNORECASE):
                 perror('请输入a/b/c/d开头、1位非零数字结尾的内容，如：a9')
                 continue
